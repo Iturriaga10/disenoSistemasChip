@@ -3,6 +3,8 @@ Ejercicio1 -
 by: David Iturriaga Sotelo
 """
 
+
+
 import RPi.GPIO as GPIO
 import time
 
