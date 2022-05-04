@@ -19,6 +19,7 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BCM) # USAR LA NOMENCLATURA BCM (HARDWARE)
+GPIO.setwarnings(False)
 
 GPIO.cleanup()
 
@@ -39,30 +40,28 @@ LCD_LINE_2 = 0xC0 # DIRECCION RAM PARA SEGUNDA LINEA
 E_PULSE = 0.00005 # CONSTANTES PARA RETARDOS
 E_DELAY = 0.00005
 
+# DEFINIR GPIO COMO SALIDA PARA USAR LA LCD
+GPIO.setup(LCD_E, GPIO.OUT) # E
+GPIO.setup(LCD_RS, GPIO.OUT) # RS
+GPIO.setup(LCD_D4, GPIO.OUT) # DB4
+GPIO.setup(LCD_D5, GPIO.OUT) # DB5
+GPIO.setup(LCD_D6, GPIO.OUT) # DB6
+GPIO.setup(LCD_D7, GPIO.OUT) # DB7
+
 def main():
-    # DEFINIR GPIO COMO SALIDA PARA USAR LA LCD
-    GPIO.setup(LCD_E, GPIO.OUT) # E
-    GPIO.setup(LCD_RS, GPIO.OUT) # RS
-    GPIO.setup(LCD_D4, GPIO.OUT) # DB4
-    GPIO.setup(LCD_D5, GPIO.OUT) # DB5
-    GPIO.setup(LCD_D6, GPIO.OUT) # DB6
-    GPIO.setup(LCD_D7, GPIO.OUT) # DB7
-
-# INICIALIZAR DISPLAY
-lcd_init()
-
     # ENVIAR DATOS DE PRUEBA
+    time.sleep(.05)
     lcd_byte(LCD_LINE_1, LCD_CMD)
-    lcd_string("Rasbperry Pi")
+    lcd_string("Rasbperry")
     lcd_byte(LCD_LINE_2, LCD_CMD)
     lcd_string("Model B")
-    time.sleep(5)
+    time.sleep(1)
 
     lcd_byte(LCD_LINE_1, LCD_CMD)
-    lcd_string("HeTPro")
+    lcd_string("Tecnologico")
     lcd_byte(LCD_LINE_2, LCD_CMD)
-    lcd_string("PiDuino / LCD")
-    time.sleep(5)
+    lcd_string("Monterrey")
+    time.sleep(1)
 
 def lcd_init():
     # PROCESO DE INICIALIZACION
@@ -91,13 +90,13 @@ def lcd_byte(bits, mode):
     GPIO.output(LCD_D5, False)
     GPIO.output(LCD_D6, False)
     GPIO.output(LCD_D7, False)
-    if bits&0x10==0x10:
+    if bits & 0x10==0x10:
         GPIO.output(LCD_D4, True)
-    if bits&0x20==0x20:
+    if bits & 0x20==0x20:
         GPIO.output(LCD_D5, True)
-    if bits&0x40==0x40:
+    if bits & 0x40==0x40:
         GPIO.output(LCD_D6, True)
-    if bits&0x80==0x80:
+    if bits & 0x80==0x80:
         GPIO.output(LCD_D7, True)
 
     time.sleep(E_DELAY)
@@ -111,13 +110,13 @@ def lcd_byte(bits, mode):
     GPIO.output(LCD_D6, False)
     GPIO.output(LCD_D7, False)
 
-    if bits&0x01==0x01:
+    if bits & 0x01 == 0x01:
         GPIO.output(LCD_D4, True)
-    if bits&0x02==0x02:
+    if bits & 0x02 == 0x02:
         GPIO.output(LCD_D5, True)
-    if bits&0x04==0x04:
+    if bits & 0x04 == 0x04:
         GPIO.output(LCD_D6, True)
-    if bits&0x08==0x08:
+    if bits & 0x08 == 0x08:
         GPIO.output(LCD_D7, True)
 
     time.sleep(E_DELAY)
@@ -126,5 +125,9 @@ def lcd_byte(bits, mode):
     GPIO.output(LCD_E, False)
     time.sleep(E_DELAY)
 
-if __name__ == ‘__main__’:
-main()
+if __name__ == '__main__':
+    lcd_init()
+    while True:
+        # INICIALIZAR DISPLAY
+        
+        main()
