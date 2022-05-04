@@ -1,5 +1,5 @@
 """
-Ejercicio3 - 
+Ejercicio3 - Realiza el calculo correspondiente para activar tu Relay, donde la terminal de salida de tu relay debe de encender un Foco convencional.
 by: David Iturriaga Sotelo
 """
 

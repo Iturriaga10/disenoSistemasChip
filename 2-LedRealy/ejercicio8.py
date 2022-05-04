@@ -1,5 +1,5 @@
 """
-Ejercicio2 - 
+Ejercicio2 - Realiza el calculo correspondiente para activar tu Relay, donde la terminal de salida de tu relay debe de encender una lámpara de 12V
 by: David Iturriaga Sotelo
 """
 

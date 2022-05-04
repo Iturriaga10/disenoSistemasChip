@@ -1,14 +1,17 @@
+"""
+Ejercicio3 - Escribe un programa en tu Raspberry que mueva un motor a pasos.
+A) Por pasos Derecha / Izquierda
+B) Continuó Derecha / Izquierda 
+by: David Iturriaga Sotelo
+"""
+
 import RPi.GPIO as GPIO
 import time
-
-#GPIO.setmode(GPIO.BOARD)
 
 input_btn = 15
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-
-
 
 GPIO.setup(input_btn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 

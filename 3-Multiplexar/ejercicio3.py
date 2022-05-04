@@ -1,5 +1,5 @@
 """
-Ejercicio3 - 
+Ejercicio3 - Diseñar un circuito electrónico capaz de tomar información de un teclado matricial y mostrar los numero en los displays de 7 segmentos que construye en el ejercicio 1.
 by: David Iturriaga Sotelo
 """
 

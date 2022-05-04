@@ -1,5 +1,6 @@
 """
-Ejercicio1 - 
+Ejercicio6 - Resuelve el ejercicio 1, 2, 3 y 4 tomando la salida de tu RaspBerry Pi Como fuente.
+Nota; Debes de investigar la salida de voltaje de los pines de GPIO. 
 by: David Iturriaga Sotelo
 """
 

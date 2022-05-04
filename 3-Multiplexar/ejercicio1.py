@@ -1,5 +1,6 @@
 """
-Ejercicio1 - 
+Ejercicio1 - Diseñar un circuito electrónico capaz de encender 4 display de 7 segmentos, utilizando multiplexación.
+El mensaje a mostrar debe de ser tu nombre completo y debe de recorrerse de izquierda a derecha. 
 by: David Iturriaga Sotelo
 """
 
