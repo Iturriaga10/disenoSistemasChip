@@ -4,21 +4,20 @@ import time
 
 app = Flask(__name__)
 
+GPIO.cleanup()
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 GPIO.setup(18, GPIO.OUT)
 
-led_status = False
+@app.route("/<int:led_status>")
+def turnon_led(led_status):
 
-@app.route("/")
-def turnon_led():
-
-    if led_status:
+    if led_status == 1 :
         GPIO.output(18, GPIO.HIGH)
     else:
         GPIO.output(18, GPIO.LOW)
     
-    not led_status
     
     return "Success"
