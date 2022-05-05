@@ -1,5 +1,5 @@
 """
-Ejercicio3 - Escribe un programa en tu Raspberry que mueva un motor a pasos.
+Ejercicio1 - Escribe un programa en tu Raspberry que mueva un motor a pasos.
 A) Por pasos Derecha / Izquierda
 B) Continuó Derecha / Izquierda 
 by: David Iturriaga Sotelo
